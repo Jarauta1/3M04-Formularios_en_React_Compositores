@@ -1,6 +1,6 @@
 import {useState} from "react"
 
-function EliminarNombre () {
+function EliminarNombre (props) {
 
     let [textoBorrar,setTextoBorrar] = useState("")
   
@@ -9,11 +9,10 @@ function EliminarNombre () {
     }
   
     function pasarela() {
-      /* borrarTexto(textoBorrar) */
+      props.BorrarTexto(textoBorrar)
     }
   
   return (<>
-  <EliminarNombre textoBorrar={textoBorrar} pasarela={pasarela} />
   <input type="text" value={textoBorrar} onChange={eliminarTexto}/>
     <button onClick={pasarela}>Borrar</button>
   </>)

@@ -1,4 +1,3 @@
-
 import './App.css';
 import {useState} from "react"
 import {BrowserRouter,Route} from "react-router-dom"
@@ -74,15 +73,16 @@ function App() {
   /* -------------------- Apartado 8 -------------------- */
   
   /* function pasarela() {
-    borrarTexto(textoBorrar)
+    BorrarTexto(textoBorrar)
   } */
   
-  function BorrarTexto(props) {
-    console.log(props.nombre)
+  function BorrarTexto(nombre) {
+   
     let copia
-    copia = array.filter(compositor => compositor.nombre !== props.nombre)
+    copia = array.filter(compositor => compositor.nombre !== nombre)
     setArray(copia)
     /* setTextoBorrar("")  */
+    
   }
 /* ---------------------------------------------------- */
 
@@ -100,7 +100,7 @@ function App() {
   <button onClick={mostrarTexto}>Subir</button>
   </Route>
   <Route exact path="/eliminar">
-  <BorrarTexto  />
+  <EliminarNombre BorrarTexto={BorrarTexto} />
   </Route>
   <Footer/>
   </BrowserRouter>)
